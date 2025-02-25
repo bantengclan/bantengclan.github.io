@@ -1,2 +1,2 @@
 # bantengclan.github.io
-Web Organization for bantenclan
+Web Organization for bantengclan
