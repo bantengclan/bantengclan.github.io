@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/css/style.js"></script>
     <style>
         /* Snap scroll */
         html {
@@ -12,89 +12,119 @@
             scroll-behavior: smooth;
         }
 
-        section {
-            scroll-snap-align: start;
-        }
-
         .active {
             background-color: red;
+        }
+
+        footer {
+            position: relative;
+            z-index: 10;
+        }
+
+        :root::-webkit-scrollbar {
+            display: none;
+        }
+
+        :root {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
     </style>
 </head>
 
 <title>Banteng Clan</title>
 
-<body class="bg-[#252525] text-white">
-    <header>
-        <nav class="fixed top-0 left-1/2 transform -translate-x-1/2 w-[90vw] m-[1vh] flex items-center justify-center bg-black py-[2vh] rounded-full">
-            <div class="w-full flex justify-center items-center text-white px-6 py-3">
-                <div class="hidden md:flex justify-center items-center text-white">
-                    <ul class="flex space-x-6 text-lg font-semibold">
-                        <li><a href="#home" class="hover:text-white hover:bg-red-500 px-4 py-2 rounded transition active" id="homeLink">Home</a></li>
-                        <li><a href="#member" class="hover:text-white hover:bg-red-500 px-4 py-2 rounded transition" id="memberLink">Member</a></li>
-                    </ul>
-                </div>
-
-                <button id="menuToggle" class="md:hidden flex items-center justify-center bg-black text-white p-3 rounded-full shadow-lg">
-                    ☰
-                </button>
-
-                <div id="mobileMenu" class="hidden absolute top-[7vh] right-0 w-[40vw] bg-black rounded-lg shadow-lg p-4 text-center">
-                    <ul class="space-y-3 text-white text-lg font-semibold">
-                        <li><a href="#home" class="hover:text-white hover:bg-red-500 px-4 py-2 rounded transition" id="mobileHomeLink">Home</a></li>
-                        <li><a href="#member" class="hover:text-white hover:bg-red-500 px-4 py-2 rounded transition" id="mobileMemberLink">Member</a></li>
-                    </ul>
-                </div>
-            </div>
+<body class="bg-[#252525] text-white flex flex-col h-full">
+    <header
+        class="fixed top-0 left-1/2 transform -translate-x-1/2 w-[90vw] m-[1vh] flex items-center justify-center bg-black py-[2vh] rounded-full">
+        <nav class="w-full flex justify-center items-center text-white px-6 py-3">
+            <ul class="flex space-x-6 text-lg font-semibold">
+                <li><a href="#home"
+                        class="hover:text-white hover:bg-red-500 px-4 py-2 rounded transition active">Home</a>
+                </li>
+                <li><a href="#member" class="hover:text-white hover:bg-red-500 px-4 py-2 rounded transition">Member</a>
+                </li>
+                <li><a href="#activities"
+                        class="hover:text-white hover:bg-red-500 px-4 py-2 rounded transition">Aktivitas</a>
+                </li>
+                <li><a href="#developer"
+                        class="hover:text-white hover:bg-red-500 px-4 py-2 rounded transition">Developer</a>
+                </li>
+                <li><a href="#projects"
+                        class="hover:text-white hover:bg-red-500 px-4 py-2 rounded transition">Projects</a>
+                </li>
+                <li><a href="#contact"
+                        class="hover:text-white hover:bg-red-500 px-4 py-2 rounded transition">Contact</a>
+                </li>
+            </ul>
         </nav>
     </header>
 
-    <main>
-        <section id="home" class="h-[100vh] flex items-center justify-center">
-            <h1 class="text-[4vw]">Home Section</h1>
+    <main class="snap-y snap-mandatory flex-grow overflow-y-clip">
+        <section id="home" class="h-[100vh] snap-center flex items-center justify-center flex-col justify-center">
+            <h2 class="text-[3vw] mb-[3vh]">home</h2>
         </section>
-
-        <section id="member" class="min-h-[100vh] flex flex-col items-center justify-center">
+        <section id="member" class="h-[100vh] snap-center flex flex-col items-center justify-center">
             <h2 class="text-[3vw] mb-[3vh]">Member</h2>
-
-            <!-- Grid Layout Member -->
-            <div class="grid w-[90vw] gap-[3vw] px-[3vw] 
-                        grid-cols-1 md:grid-cols-2 lg:grid-cols-5">
-                
-                <!-- Baris 1 (1 kolom penuh) -->
-                <div class="md:col-span-2 lg:col-span-1 flex flex-col items-center">
-                    <img src="/assets/images/fik.jpg" alt="Member 1" class="w-[40vw] h-[40vw] lg:w-[15vw] lg:h-[15vw] rounded-full mb-[1vh]">
-                    <p class="text-[3vw] lg:text-[1.5vw]">Mas Fik</p>
-                </div>
-
-                <!-- Baris 2 (2 kolom) -->
+            <div class="grid w-[90vw] gap-[3vw] px-[3vw] grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
                 <div class="flex flex-col items-center">
-                    <img src="/assets/images/caplang.jpg" alt="Member 2" class="w-[40vw] h-[40vw] lg:w-[15vw] lg:h-[15vw] rounded-full mb-[1vh]">
-                    <p class="text-[3vw] lg:text-[1.5vw]">Caplang</p>
+                    <img src="/assets/images/fik.jpg" alt="Member 1" class="w-[15vw] h-[15vw] rounded-full mb-[1vh]">
+                    <p class="text-[1.5vw]">Mas Fik</p>
                 </div>
                 <div class="flex flex-col items-center">
-                    <img src="/assets/images/tibex.jpg" alt="Member 3" class="w-[40vw] h-[40vw] lg:w-[15vw] lg:h-[15vw] rounded-full mb-[1vh]">
-                    <p class="text-[3vw] lg:text-[1.5vw]">Tibex</p>
-                </div>
-
-                <!-- Baris 3 (2 kolom) -->
-                <div class="flex flex-col items-center">
-                    <img src="/assets/images/yog.jpg" alt="Member 4" class="w-[40vw] h-[40vw] lg:w-[15vw] lg:h-[15vw] rounded-full mb-[1vh]">
-                    <p class="text-[3vw] lg:text-[1.5vw]">Yog</p>
+                    <img src="/assets/images/caplang.jpg" alt="Member 2"
+                        class="w-[15vw] h-[15vw] rounded-full mb-[1vh]">
+                    <p class="text-[1.5vw]">Caplang</p>
                 </div>
                 <div class="flex flex-col items-center">
-                    <img src="/assets/images/sarip.jpg" alt="Member 5" class="w-[40vw] h-[40vw] lg:w-[15vw] lg:h-[15vw] rounded-full mb-[1vh]">
-                    <p class="text-[3vw] lg:text-[1.5vw]">Sarip</p>
+                    <img src="/assets/images/tibex.jpg" alt="Member 3" class="w-[15vw] h-[15vw] rounded-full mb-[1vh]">
+                    <p class="text-[1.5vw]">Tibex</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="/assets/images/yog.jpg" alt="Member 4" class="w-[15vw] h-[15vw] rounded-full mb-[1vh]">
+                    <p class="text-[1.5vw]">Yog</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <img src="/assets/images/sarip.jpg" alt="Member 5" class="w-[15vw] h-[15vw] rounded-full mb-[1vh]">
+                    <p class="text-[1.5vw]">Sarip</p>
                 </div>
             </div>
         </section>
+        <section id="activities" class="h-[100vh] snap-center flex flex-col items-center">
+            <h2 class="text-[3vw] mb-[3vh] mt-[10vh] ">Aktivitas</h2>
+            <div class="grid grid-cols-3 gap-4 w-[90vw] px-4 mb-6">
+                <img class="w-full rounded-lg" src="/assets/images/kegiatan/ayce.jpg" alt="Kegiatan 1">
+                <img class="w-full rounded-lg" src="/assets/images/kegiatan/gacoan.jpg" alt="Kegiatan 2">
+                <img class="w-full rounded-lg" src="/assets/images/kegiatan/ayce.jpg" alt="Kegiatan 3">
+                <img class="w-full rounded-lg" src="/assets/images/kegiatan/ayce.jpg" alt="Kegiatan 1">
+                <img class="w-full rounded-lg" src="/assets/images/kegiatan/ayce.jpg" alt="Kegiatan 2">
+                <img class="w-full rounded-lg" src="/assets/images/kegiatan/ayce.jpg" alt="Kegiatan 3">
+            </div>
+        </section>
+
+        <section id="developer" class="h-[100vh] snap-center flex items-center justify-center flex-col justify-center">
+            <h2 class="text-[3vw] mb-[3vh]">Developer</h2>
+        </section>
+
+        <section id="projects" class="h-[100vh] snap-center flex items-center justify-center flex-col justify-center">
+            <h2 class="text-[3vw] mb-[3vh]">Projects</h2>
+        </section>
+
+        <section id="projects" class="h-[80vh] snap-center flex items-center justify-center flex-col justify-center">
+            <h2 class="text-[3vw] mb-[3vh]">Contact</h2>
+        </section>
     </main>
 
-    <footer id="footer" class="bg-black text-white py-[3vh] mt-[5vh]">
-        <div class="text-center">
-            <p class="text-[2vw]">&copy; 2025 Banteng Clan. All rights reserved.</p>
-        </div>
+    <footer id="footer" class="bg-black text-white py-[3vh] text-center">
+        <p class="text-[2vw]">&copy; 2025 Banteng Clan. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.getElementById("menuToggle").addEventListener("click", function () {
+            document.getElementById("mobileMenu").classList.toggle("hidden");
+        });
+    </script>
 </body>
+
 
 </html>
