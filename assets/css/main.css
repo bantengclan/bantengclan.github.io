@@ -1,0 +1,23 @@
+/* Snap scroll */
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.active {
+  background-color: red;
+}
+
+footer {
+  position: relative;
+  z-index: 10;
+}
+
+:root::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
