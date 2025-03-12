@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="assets/css/style.js"></script>
+    <script src="assets/js/script.js"></script>
     <style>
         /* Snap scroll */
         html {
@@ -29,6 +30,8 @@
             scrollbar-width: none;
             -ms-overflow-style: none;
         }
+
+        
     </style>
 </head>
 
@@ -36,7 +39,7 @@
 
 <body class="bg-[#252525] text-white flex flex-col h-full">
     <header
-        class="fixed top-0 left-1/2 transform -translate-x-1/2 w-[90vw] m-[1vh] flex items-center justify-center bg-black py-[2vh] rounded-full">
+        class="fixed top-0 left-1/2 transform -translate-x-1/2 w-[90vw] m-[1vh] flex items-center justify-center bg-black py-[2vh] rounded-full z-1">
         <nav class="w-full flex justify-center items-center text-white px-6 py-3">
             <ul class="flex space-x-6 text-lg font-semibold">
                 <li><a href="#home"
@@ -90,16 +93,54 @@
                 </div>
             </div>
         </section>
-        <section id="activities" class="h-[100vh] snap-center flex flex-col items-center">
-            <h2 class="text-[3vw] mb-[3vh] mt-[10vh] ">Aktivitas</h2>
-            <div class="grid grid-cols-3 gap-4 w-[90vw] px-4 mb-6">
-                <img class="w-full rounded-lg" src="/assets/images/kegiatan/ayce.jpg" alt="Kegiatan 1">
-                <img class="w-full rounded-lg" src="/assets/images/kegiatan/gacoan.jpg" alt="Kegiatan 2">
-                <img class="w-full rounded-lg" src="/assets/images/kegiatan/ayce.jpg" alt="Kegiatan 3">
-                <img class="w-full rounded-lg" src="/assets/images/kegiatan/ayce.jpg" alt="Kegiatan 1">
-                <img class="w-full rounded-lg" src="/assets/images/kegiatan/ayce.jpg" alt="Kegiatan 2">
-                <img class="w-full rounded-lg" src="/assets/images/kegiatan/ayce.jpg" alt="Kegiatan 3">
-            </div>
+
+        <section id="activities" class="relative h-[100vh] snap-center flex flex-col items-center">
+            <h2 class="text-[3vw] mb-[3vh] mt-[10vh]">Aktivitas</h2>
+
+            <div id="carousel" class="relative w-full flex flex-col items-center">
+                <!-- Wrapper Carousel -->
+                <div class="overflow-hidden w-[90vw]">
+                    <div class="carousel-track flex transition-transform duration-700 ease-in-out">
+                        <!-- Slide 1 -->
+                        <div class="carousel-item grid grid-cols-3 gap-4 w-full min-w-full">
+                            <img class="w-full h-[35vh] aspect-video rounded-lg object-cover"
+                                src="/assets/images/kegiatan/ayce.jpg" alt="Kegiatan 1">
+                            <img class="w-full h-[35vh] aspect-video rounded-lg object-cover"
+                                src="/assets/images/kegiatan/gacoan.jpg" alt="Kegiatan 2">
+                            <img class="w-full h-[35vh] aspect-video rounded-lg object-cover"
+                                src="/assets/images/kegiatan/bukber.jpg" alt="Kegiatan 3">
+                            <img class="w-full h-[35vh] aspect-video rounded-lg object-cover"
+                                src="/assets/images/kegiatan/lulusan.jpg" alt="Kegiatan 4">
+                            <img class="w-full h-[35vh] aspect-video rounded-lg object-cover"
+                                src="/assets/images/kegiatan/unj.jpg" alt="Kegiatan 5">
+                            <img class="w-full h-[35vh] aspect-video rounded-lg object-cover"
+                                src="/assets/images/kegiatan/aeon.jpg" alt="Kegiatan 6">
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="carousel-item grid grid-cols-3 gap-4 w-full min-w-full">
+                            <img class="w-full h-[35vh] aspect-video rounded-lg object-cover"
+                                src="/assets/images/kegiatan/gacoan1.jpg" alt="Kegiatan 7">
+
+                            <img class="w-full h-[35vh] aspect-video rounded-lg object-cover"
+                                src="/assets/images/kegiatan/gacoan2.jpg" alt="Kegiatan 8">
+
+                            <img class="w-full h-[35vh] aspect-video rounded-lg object-cover"
+                                src="/assets/images/kegiatan/gacoan3.jpg" alt="Kegiatan 9">
+
+                            <img class="w-full h-[35vh] aspect-video rounded-lg object-cover"
+                                src="/assets/images/kegiatan/gacoan4.jpg" alt="Kegiatan 10">
+
+                            <img class="w-full h-[35vh] aspect-video rounded-lg object-cover"
+                                src="/assets/images/kegiatan/gacoan5.jpg" alt="Kegiatan 11">
+                        </div>
+                    </div>
+
+                    <!-- Tombol Navigasi -->
+                    <button id="prevBtn"
+                        class="absolute top-1/2 left-4 transform -translate-y-1/2 px-4 py-2 bg-gray-800 text-white rounded-full">❮</button>
+                    <button id="nextBtn"
+                        class="absolute top-1/2 right-4 transform -translate-y-1/2 px-4 py-2 bg-gray-800 text-white rounded-full">❯</button>
+                </div>
         </section>
 
         <section id="developer" class="h-[100vh] snap-center flex items-center justify-center flex-col justify-center">
@@ -110,13 +151,13 @@
             <h2 class="text-[3vw] mb-[3vh]">Projects</h2>
         </section>
 
-        <section id="projects" class="h-[80vh] snap-center flex items-center justify-center flex-col justify-center">
+        <section id="contact" class="h-[80vh] snap-center flex items-center justify-center flex-col justify-center">
             <h2 class="text-[3vw] mb-[3vh]">Contact</h2>
         </section>
     </main>
 
-    <footer id="footer" class="bg-black text-white py-[3vh] text-center">
-        <p class="text-[2vw]">&copy; 2025 Banteng Clan. All rights reserved.</p>
+    <footer id="footer" class="h-[10vh] bg-black text-white py-[3vh] text-center">
+        <p class="text-[2vh]">&copy; 2025 Banteng Clan. All rights reserved.</p>
     </footer>
 
     <script>
