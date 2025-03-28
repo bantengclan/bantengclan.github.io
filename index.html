@@ -1,188 +1,336 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="assets/css/style.js"></script>
-    <script src="assets/js/script.js"></script>
-    <link rel="stylesheet" href="assets/css/main.css">
+    <meta name="description"
+        content="Banteng Clan: Kumpulan bocah sekolah gabut dengan jiwa membanteng. Lihat anggota, aktivitas, developer, proyek, dan kontak kami.">
+    <meta name="keywords" content="Banteng Clan, komunitas, developer, proyek, aktivitas, gabut">
+    <meta name="author" content="Banteng Clan Developers">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Banteng Clan - Jiwa Membanteng</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        nav ul li a.active {
+            color: #EF4444;
+        }
+
+        section:not(#home) {
+            padding-top: 15vh;
+        }
+
+        @media (min-width: 768px) {
+            section:not(#home) {
+                padding-top: 12vh;
+            }
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex-grow: 1;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
 </head>
 
-<title>Banteng Clan</title>
 
-<body class="bg-[#252525] text-white flex flex-col h-full">
+<body class="bg-[#252525] text-white flex flex-col min-h-screen">
     <header
-        class="fixed top-0 left-1/2 transform -translate-x-1/2 w-[90vw] m-[1vh] flex items-center justify-center bg-black py-[2vh] rounded-full z-1">
-        <nav class="w-full flex justify-center items-center text-white px-6 py-3">
-            <ul class="flex space-x-6 text-lg font-semibold">
+        class="fixed top-0 left-1/2 transform -translate-x-1/2 w-[95%] md:w-[90%] mt-2 md:mt-[1vh] flex items-center justify-center bg-black py-2 md:py-[1.5vh] rounded-full z-50 shadow-lg">
+        <nav class="w-full flex justify-center items-center text-white px-4 py-1 md:px-6">
+            <ul
+                class="flex flex-wrap justify-center gap-x-1 sm:gap-x-3 md:gap-x-6 text-xs sm:text-sm md:text-base lg:text-lg font-semibold">
                 <li><a href="#home"
-                        class="hover:text-white hover:bg-red-500 px-4 py-2 rounded transition active">Home</a>
+                        class="hover:text-red-500 px-2 py-1 md:px-4 md:py-2 rounded transition block text-center">Home</a>
                 </li>
-                <li><a href="#member" class="hover:text-white hover:bg-red-500 px-4 py-2 rounded transition">Member</a>
+                <li><a href="#member"
+                        class="hover:text-red-500 px-2 py-1 md:px-4 md:py-2 rounded transition block text-center">Member</a>
                 </li>
                 <li><a href="#activities"
-                        class="hover:text-white hover:bg-red-500 px-4 py-2 rounded transition">Aktivitas</a>
+                        class="hover:text-red-500 px-2 py-1 md:px-4 md:py-2 rounded transition block text-center">Aktivitas</a>
                 </li>
                 <li><a href="#developer"
-                        class="hover:text-white hover:bg-red-500 px-4 py-2 rounded transition">Developer</a>
+                        class="hover:text-red-500 px-2 py-1 md:px-4 md:py-2 rounded transition block text-center">Developer</a>
                 </li>
                 <li><a href="#projects"
-                        class="hover:text-white hover:bg-red-500 px-4 py-2 rounded transition">Projects</a>
+                        class="hover:text-red-500 px-2 py-1 md:px-4 md:py-2 rounded transition block text-center">Projects</a>
                 </li>
                 <li><a href="#contact"
-                        class="hover:text-white hover:bg-red-500 px-4 py-2 rounded transition">Contact</a>
+                        class="hover:text-red-500 px-2 py-1 md:px-4 md:py-2 rounded transition block text-center">Contact</a>
                 </li>
             </ul>
         </nav>
     </header>
 
-    <main class="snap-y snap-mandatory flex-grow overflow-y-clip">
-        <section id="home" class="h-[100vh] snap-center flex items-center justify-center flex-col justify-center">
-            <h3 class="text-[3vw] mb-[3vh]"> Siapa Kami ?</h3>
-            <p class="text-[2vw]">Cuma kumpulan bocah sekolah gabut dengan jiwa membanteng</p>
+    <main class="snap-y snap-mandatory flex-grow overflow-y-scroll w-full">
+        <section id="home"
+            class="min-h-screen snap-center flex items-center justify-center flex-col text-center px-4 pt-[15vh] md:pt-[12vh]">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-4 md:mb-6 font-bold"> Siapa Kami ?</h1>
+            <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl">Cuma kumpulan bocah sekolah gabut dengan jiwa
+                membanteng</p>
         </section>
-        <section id="member" class="h-[100vh] snap-center flex flex-col items-center justify-center">
-            <h2 class="text-[3vw] mb-[3vh]">Member</h2>
-            <div class="grid w-[90vw] gap-[3vw] px-[3vw] grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
-                <div class="flex flex-col items-center">
-                    <img src="/assets/images/fik.jpg" alt="Member 1" class="w-[15vw] h-[15vw] rounded-full mb-[1vh]">
-                    <p class="text-[1.5vw]">Mas Fik</p>
+
+        <section id="member" class="min-h-screen snap-center flex flex-col items-center justify-center px-4">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 md:mb-10 font-semibold">Member</h2>
+            <div
+                class="w-full max-w-6xl flex overflow-x-auto pb-4 gap-x-6 no-scrollbar sm:grid sm:grid-cols-3 sm:gap-8 sm:overflow-visible sm:pb-0 lg:grid-cols-5 lg:gap-10">
+                <div class="flex-none w-32 sm:w-auto flex flex-col items-center text-center">
+                    <img src="/assets/images/fik.jpg" alt="Foto Mas Fik"
+                        class="w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 rounded-full mb-2 md:mb-3 object-cover border-2 border-gray-700">
+                    <p class="text-base sm:text-lg md:text-xl">Mas Fik</p>
                 </div>
-                <div class="flex flex-col items-center">
-                    <img src="/assets/images/caplang.jpg" alt="Member 2"
-                        class="w-[15vw] h-[15vw] rounded-full mb-[1vh]">
-                    <p class="text-[1.5vw]">Caplang</p>
+                <div class="flex-none w-32 sm:w-auto flex flex-col items-center text-center">
+                    <img src="/assets/images/caplang.jpg" alt="Foto Caplang"
+                        class="w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 rounded-full mb-2 md:mb-3 object-cover border-2 border-gray-700">
+                    <p class="text-base sm:text-lg md:text-xl">Caplang</p>
                 </div>
-                <div class="flex flex-col items-center">
-                    <img src="/assets/images/tibex.jpg" alt="Member 3" class="w-[15vw] h-[15vw] rounded-full mb-[1vh]">
-                    <p class="text-[1.5vw]">Tibex</p>
+                <div class="flex-none w-32 sm:w-auto flex flex-col items-center text-center">
+                    <img src="/assets/images/tibex.jpg" alt="Foto Tibex"
+                        class="w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 rounded-full mb-2 md:mb-3 object-cover border-2 border-gray-700">
+                    <p class="text-base sm:text-lg md:text-xl">Tibex</p>
                 </div>
-                <div class="flex flex-col items-center">
-                    <img src="/assets/images/yog.jpg" alt="Member 4" class="w-[15vw] h-[15vw] rounded-full mb-[1vh]">
-                    <p class="text-[1.5vw]">Yog</p>
+                <div class="flex-none w-32 sm:w-auto flex flex-col items-center text-center">
+                    <img src="/assets/images/yog.jpg" alt="Foto Yog"
+                        class="w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 rounded-full mb-2 md:mb-3 object-cover border-2 border-gray-700">
+                    <p class="text-base sm:text-lg md:text-xl">Yog</p>
                 </div>
-                <div class="flex flex-col items-center">
-                    <img src="/assets/images/sarip.jpg" alt="Member 5" class="w-[15vw] h-[15vw] rounded-full mb-[1vh]">
-                    <p class="text-[1.5vw]">Sarip</p>
+                <div class="flex-none w-32 sm:w-auto flex flex-col items-center text-center">
+                    <img src="/assets/images/sarip.jpg" alt="Foto Sarip"
+                        class="w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 rounded-full mb-2 md:mb-3 object-cover border-2 border-gray-700">
+                    <p class="text-base sm:text-lg md:text-xl">Sarip</p>
                 </div>
             </div>
         </section>
 
-        <section id="activities" class="relative h-[100vh] snap-center flex flex-col items-center">
-            <h2 class="text-[3vw] mb-[3vh] mt-[10vh]">Aktivitas</h2>
+        <section id="activities" class="relative min-h-screen snap-center flex flex-col items-center px-4">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 md:mb-10 font-semibold">Aktivitas</h2>
 
-            <div id="carousel" class="relative w-full flex flex-col items-center">
-                <!-- Wrapper Carousel -->
-                <div class="overflow-hidden w-[90vw]">
+            <div id="carousel" class="relative w-full max-w-6xl flex flex-col items-center">
+                <div class="overflow-hidden w-full rounded-lg shadow-lg">
                     <div class="carousel-track flex transition-transform duration-700 ease-in-out">
-                        <!-- Slide 1 -->
-                        <div class="carousel-item grid grid-cols-3 gap-4 w-full min-w-full">
-                            <img class="w-full h-[35vh] aspect-video rounded-lg object-cover"
-                                src="/assets/images/kegiatan/ayce.jpg" alt="Kegiatan 1">
-                            <img class="w-full h-[35vh] aspect-video rounded-lg object-cover"
-                                src="/assets/images/kegiatan/gacoan.jpg" alt="Kegiatan 2">
-                            <img class="w-full h-[35vh] aspect-video rounded-lg object-cover"
-                                src="/assets/images/kegiatan/bukber.jpg" alt="Kegiatan 3">
-                            <img class="w-full h-[35vh] aspect-video rounded-lg object-cover"
-                                src="/assets/images/kegiatan/lulusan.jpg" alt="Kegiatan 4">
-                            <img class="w-full h-[35vh] aspect-video rounded-lg object-cover"
-                                src="/assets/images/kegiatan/unj.jpg" alt="Kegiatan 5">
-                            <img class="w-full h-[35vh] aspect-video rounded-lg object-cover"
-                                src="/assets/images/kegiatan/aeon.jpg" alt="Kegiatan 6">
+                        <div
+                            class="carousel-item grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-3 sm:gap-4 w-full flex-none p-2">
+                            <img class="w-full h-36 sm:h-48 md:h-64 object-cover rounded-lg"
+                                src="/assets/images/kegiatan/ayce.jpg" alt="Kegiatan makan AYCE">
+                            <img class="w-full h-36 sm:h-48 md:h-64 object-cover rounded-lg"
+                                src="/assets/images/kegiatan/gacoan.jpg" alt="Kegiatan makan Gacoan">
+                            <img class="w-full h-36 sm:h-48 md:h-64 object-cover rounded-lg"
+                                src="/assets/images/kegiatan/bukber.jpg" alt="Kegiatan buka bersama">
+                            <img class="w-full h-36 sm:h-48 md:h-64 object-cover rounded-lg"
+                                src="/assets/images/kegiatan/lulusan.jpg" alt="Perayaan kelulusan">
+                            <img class="w-full h-36 sm:h-48 md:h-64 object-cover rounded-lg"
+                                src="/assets/images/kegiatan/unj.jpg" alt="Kegiatan di UNJ">
+                            <img class="w-full h-36 sm:h-48 md:h-64 object-cover rounded-lg"
+                                src="/assets/images/kegiatan/aeon.jpg" alt="Kegiatan di Aeon Mall">
                         </div>
-                        <!-- Slide 2 -->
-                        <div class="carousel-item grid grid-cols-3 gap-4 w-full min-w-full">
-                            <img class="w-full h-[35vh] aspect-video rounded-lg object-cover"
-                                src="/assets/images/kegiatan/gacoan1.jpg" alt="Kegiatan 7">
-
-                            <img class="w-full h-[35vh] aspect-video rounded-lg object-cover"
-                                src="/assets/images/kegiatan/gacoan2.jpg" alt="Kegiatan 8">
-
-                            <img class="w-full h-[35vh] aspect-video rounded-lg object-cover"
-                                src="/assets/images/kegiatan/gacoan3.jpg" alt="Kegiatan 9">
-
-                            <img class="w-full h-[35vh] aspect-video rounded-lg object-cover"
-                                src="/assets/images/kegiatan/gacoan4.jpg" alt="Kegiatan 10">
-
-                            <img class="w-full h-[35vh] aspect-video rounded-lg object-cover"
-                                src="/assets/images/kegiatan/gacoan5.jpg" alt="Kegiatan 11">
-
-                            <img class="w-full h-[35vh] aspect-video rounded-lg object-cover"
-                                src="/assets/images/kegiatan/lokapala.jpg" alt="Kegiatan 12">
+                        <div
+                            class="carousel-item grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-3 sm:gap-4 w-full flex-none p-2">
+                            <img class="w-full h-36 sm:h-48 md:h-64 object-cover rounded-lg"
+                                src="/assets/images/kegiatan/gacoan1.jpg" alt="Kegiatan makan Gacoan lagi 1">
+                            <img class="w-full h-36 sm:h-48 md:h-64 object-cover rounded-lg"
+                                src="/assets/images/kegiatan/gacoan2.jpg" alt="Kegiatan makan Gacoan lagi 2">
+                            <img class="w-full h-36 sm:h-48 md:h-64 object-cover rounded-lg"
+                                src="/assets/images/kegiatan/gacoan3.jpg" alt="Kegiatan makan Gacoan lagi 3">
+                            <img class="w-full h-36 sm:h-48 md:h-64 object-cover rounded-lg"
+                                src="/assets/images/kegiatan/gacoan4.jpg" alt="Kegiatan makan Gacoan lagi 4">
+                            <img class="w-full h-36 sm:h-48 md:h-64 object-cover rounded-lg"
+                                src="/assets/images/kegiatan/gacoan5.jpg" alt="Kegiatan makan Gacoan lagi 5">
+                            <img class="w-full h-36 sm:h-48 md:h-64 object-cover rounded-lg"
+                                src="/assets/images/kegiatan/lokapala.jpg" alt="Bermain Lokapala">
                         </div>
-                        <!--Slides 3-->
-                        <div class="carousel-item grid grid-cols-3 gap-4 w-full min-w-full">
-                            <img class="w-full h-[35vh] aspect-video rounded-lg object-cover"
-                                src="/assets/images/kegiatan/bakaran.jpg" alt="Kegiatan 13">
+                        <div
+                            class="carousel-item grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-3 sm:gap-4 w-full flex-none p-2">
+                            <img class="w-full h-36 sm:h-48 md:h-64 object-cover rounded-lg"
+                                src="/assets/images/kegiatan/bakaran.jpg" alt="Kegiatan Bakaran">
                         </div>
                     </div>
-
-                    <!-- Tombol Navigasi -->
-                    <button id="prevBtn"
-                        class="absolute top-1/2 left-4 transform -translate-y-1/2 px-4 py-2 bg-gray-800 text-white rounded-full">❮</button>
-                    <button id="nextBtn"
-                        class="absolute top-1/2 right-4 transform -translate-y-1/2 px-4 py-2 bg-gray-800 text-white rounded-full">❯</button>
                 </div>
+
+                <button id="prevBtn" aria-label="Previous Slide"
+                    class="absolute top-1/2 left-1 sm:left-2 transform -translate-y-1/2 px-3 py-1 sm:px-4 sm:py-2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white rounded-full focus:outline-none z-10">❮</button>
+                <button id="nextBtn" aria-label="Next Slide"
+                    class="absolute top-1/2 right-1 sm:right-2 transform -translate-y-1/2 px-3 py-1 sm:px-4 sm:py-2 bg-black bg-opacity-50 hover:bg-opacity-75 text-white rounded-full focus:outline-none z-10">❯</button>
+            </div>
         </section>
 
-        <section id="developer" class="h-[100vh] snap-center flex items-center justify-center flex-col justify-center">
-            <h2 class="text-[2vw] mb-[3vh]">Tukang ngoding di grup</h2>
-            <div class="grid w-[90vw] gap-[3vw] px-[3vw] grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
-                <div class="flex flex-col items-center">
-                    <img src="/assets/images/fik.jpg" alt="Member 1" class="w-[15vw] h-[15vw] rounded-full mb-[1vh]">
-                    <p class="text-[1.5vw]">Mas Fik</p>
+        <section id="developer" class="min-h-screen snap-center flex flex-col items-center justify-center px-4">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 md:mb-10 font-semibold">Developer</h2>
+            <p class="text-lg sm:text-xl md:text-2xl mb-8 md:mb-12 text-center">Tukang ngoding di grup</p>
+            <div
+                class="w-full max-w-4xl flex overflow-x-auto pb-4 gap-x-8 no-scrollbar sm:grid sm:grid-cols-3 sm:gap-10 md:gap-12 sm:overflow-visible sm:pb-0">
+                <div class="flex-none w-36 sm:w-auto flex flex-col items-center text-center">
+                    <img src="/assets/images/fik.jpg" alt="Foto Developer Mas Fik"
+                        class="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full mb-3 md:mb-4 object-cover border-2 border-gray-700">
+                    <p class="text-lg sm:text-xl md:text-2xl">Mas Fik</p>
                 </div>
-                <div class="flex flex-col items-center">
-                    <img src="/assets/images/yog.jpg" alt="Member 4" class="w-[15vw] h-[15vw] rounded-full mb-[1vh]">
-                    <p class="text-[1.5vw]">Yog</p>
+                <div class="flex-none w-36 sm:w-auto flex flex-col items-center text-center">
+                    <img src="/assets/images/yog.jpg" alt="Foto Developer Yog"
+                        class="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full mb-3 md:mb-4 object-cover border-2 border-gray-700">
+                    <p class="text-lg sm:text-xl md:text-2xl">Yog</p>
                 </div>
-                <div class="flex flex-col items-center">
-                    <img src="/assets/images/sarip.jpg" alt="Member 5" class="w-[15vw] h-[15vw] rounded-full mb-[1vh]">
-                    <p class="text-[1.5vw]">Sarip</p>
+                <div class="flex-none w-36 sm:w-auto flex flex-col items-center text-center">
+                    <img src="/assets/images/sarip.jpg" alt="Foto Developer Sarip"
+                        class="w-28 h-28 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-full mb-3 md:mb-4 object-cover border-2 border-gray-700">
+                    <p class="text-lg sm:text-xl md:text-2xl">Sarip</p>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="h-[100vh] snap-center flex items-center justify-center flex-col justify-center">
-            <h2 class="text-[3vw] mb-[3vh]">Projects</h2>
+
+        <section id="projects" class="min-h-screen snap-center flex flex-col items-center justify-center px-4">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 md:mb-10 font-semibold">Projects</h2>
+            <p class="text-lg sm:text-xl md:text-2xl">Segera Hadir...</p>
         </section>
 
-        <section id="contact" class="h-[80vh] snap-center flex items-center flex-col space-y-2">
-            <h2 class="text-[3vw] mb-[3vh]">Contact</h2>
+        <section id="contact"
+            class="min-h-[80vh] snap-start flex flex-col items-center space-y-6 sm:space-y-8 py-10 sm:py-16 px-4">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 md:mb-10 font-semibold">Contact</h2>
 
-            <div class="h-[30%]">
-                <h3 class="text-5xl">a,a</h3>
-            </div>
-
-            <div class="w-[80%] h-[50%] p-2 flex space-x-2">
-                <!-- Basecamp section -->
-                <div class="w-1/3 flex items-center justify-center">
-                    <div class="text-center">
-                        <h3 class="text-4xl font-semibold">Basecamp</h3>
-                    </div>
+            <div class="w-full max-w-5xl flex flex-col md:flex-row gap-6 md:gap-8 items-stretch">
+                <div
+                    class="w-full md:w-1/3 flex flex-col items-center justify-center bg-gray-800 rounded-lg p-6 text-center shadow-lg">
+                    <h3 class="text-2xl sm:text-3xl md:text-4xl font-semibold mb-4">Basecamp</h3>
+                    <p class="text-base sm:text-lg">Tempat kumpul favorit kami.</p>
+                    <p class="text-sm text-gray-400 mt-2">(Terkadang di Gacoan)</p>
                 </div>
 
-                <!-- Map section -->
-                <div class="w-full h-full overflow-hidden">
-                    <div id="my-map-display" class="w-full h-full">
-                        <iframe class="w-full h-full"
-                            src="https://www.google.com/maps/embed/v1/search?q=++Tempat+mantan+tobrut&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
-                            allowfullscreen></iframe>
-                    </div>
+                <div class="w-full md:w-2/3 h-64 sm:h-80 md:h-auto overflow-hidden rounded-lg shadow-lg">
+                    <iframe class="w-full h-full"
+                        src="https://www.google.com/maps/embed/v1/search?q=++Tempat+mantan+tobrut&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+                        allowfullscreen></iframe>
                 </div>
             </div>
+            <p class="text-center mt-8 text-base sm:text-lg">Atau hubungi salah satu <a href="#member"
+                    class="text-red-400 hover:text-red-500 underline">member</a> kami.</p>
         </section>
-
     </main>
 
-    <footer id="footer" class="h-[10vh] bg-black text-white py-[3vh] text-center">
-        <p class="text-[2vh]">2019 - <span id="current-year"></span> Banteng Clan</p>
+    <footer id="footer" class="bg-black text-white py-4 sm:py-5 text-center mt-auto">
+        <p class="text-sm sm:text-base">2019 - <span id="current-year"></span> Banteng Clan</p>
         <script>
             document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            const track = document.querySelector('.carousel-track');
+            const items = track ? Array.from(track.children) : [];
+            const nextButton = document.getElementById('nextBtn');
+            const prevButton = document.getElementById('prevBtn');
+            let currentItemWidth = 0;
+            let currentIndex = 0;
+
+            const calculateWidthAndMove = (index) => {
+                if (!track || items.length === 0) return;
+                currentItemWidth = items[0].getBoundingClientRect().width;
+                const amountToMove = index * -currentItemWidth;
+                track.style.transform = `translateX(${amountToMove}px)`;
+                currentIndex = index;
+            };
+
+
+            const updateButtons = () => {
+                if (!prevButton || !nextButton) return;
+                const isAtStart = currentIndex === 0;
+                const isAtEnd = currentIndex === items.length - 1;
+
+                prevButton.disabled = isAtStart;
+                nextButton.disabled = isAtEnd;
+
+                prevButton.classList.toggle('opacity-50', isAtStart);
+                prevButton.classList.toggle('cursor-not-allowed', isAtStart);
+
+                nextButton.classList.toggle('opacity-50', isAtEnd);
+                nextButton.classList.toggle('cursor-not-allowed', isAtEnd);
+
+            };
+
+            if (track && items.length > 0 && nextButton && prevButton) {
+                nextButton.addEventListener('click', () => {
+                    if (currentIndex < items.length - 1) {
+                        calculateWidthAndMove(currentIndex + 1);
+                        updateButtons();
+                    }
+                });
+
+                prevButton.addEventListener('click', () => {
+                    if (currentIndex > 0) {
+                        calculateWidthAndMove(currentIndex - 1);
+                        updateButtons();
+                    }
+                });
+
+                window.addEventListener('resize', () => {
+                    calculateWidthAndMove(currentIndex);
+                    updateButtons();
+                });
+
+                setTimeout(() => {
+                    calculateWidthAndMove(currentIndex);
+                    updateButtons();
+                }, 100);
+            }
+
+
+            const sections = document.querySelectorAll('main section');
+            const navLinks = document.querySelectorAll('header nav ul li a');
+            const headerHeight = document.querySelector('header') ? document.querySelector('header').offsetHeight : 80;
+
+            const updateActiveLink = () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - headerHeight - 50;
+
+                    if (pageYOffset >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+
+                if (!current && pageYOffset < window.innerHeight / 2) {
+                    current = 'home';
+                } else if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 50) {
+                    const lastSection = sections[sections.length - 1];
+                    if (lastSection) current = lastSection.getAttribute('id');
+                }
+
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    const linkHref = link.getAttribute('href');
+                    if (linkHref === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', updateActiveLink);
+            window.addEventListener('resize', updateActiveLink);
+            document.addEventListener('DOMContentLoaded', updateActiveLink);
+
+
         </script>
     </footer>
 </body>
-
 
 </html>
